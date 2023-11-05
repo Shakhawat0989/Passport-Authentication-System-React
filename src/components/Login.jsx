@@ -39,6 +39,11 @@ export default class extends Component {
       return <Navigate to='/profile' />
     }
 
+    //checking Authorization
+    if(localStorage.getItem('token')){
+      return <Navigate to='/profile' />
+    }
+
     return (
       <div class="row">
         <div class="col-sm-4 offset-sm-4"style={{paddingTop:'120px'}}>

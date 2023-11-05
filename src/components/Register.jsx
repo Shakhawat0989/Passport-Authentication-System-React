@@ -44,6 +44,11 @@ export default class
       return <Navigate to='/login' />
     }
 
+    //checking Authorization
+    if(localStorage.getItem('token')){
+      return <Navigate to='/profile' />
+    }
+
     return (
       <div class="row">
         <div class="col-lg-4 offset-lg-4"style={{paddingTop:'80px'}}>

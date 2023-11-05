@@ -1,9 +1,17 @@
 import React, { Component } from 'react'
+import {Navigate} from "react-router-dom";
+
 
 
 export default class 
  extends Component {
   render() {
+
+    //checking Authorization
+    if(localStorage.getItem('token')){
+      return <Navigate to='/profile' />
+    }
+
     return (
       <div class="row">
         <div class="col-lg-4 offset-lg-4"style={{paddingTop:'120px'}}>
