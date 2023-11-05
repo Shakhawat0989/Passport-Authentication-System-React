@@ -2,6 +2,12 @@ import React, { Component } from 'react'
 
 export default class Profile extends Component {
   render() {
+    let name;
+    let email;
+    if(this.props.user){
+      name=this.props.user.name;
+      email=this.props.user.email;
+    }
     return (
       <div class="row">
         <div class="col-lg-4 offset-lg-4"style={{paddingTop:'120px'}}>
@@ -9,8 +15,8 @@ export default class Profile extends Component {
         <h3 style={{textAlign:'center'}}>My Profile</h3>
         <br />
             <ul>
-              <li>Name : Shakhawat Sabbir</li>
-              <li>Email : shakhawat@gmail.com</li>
+              <li>Name : {name}</li>
+              <li>Email : {email}</li>
             </ul>
             <br />
             

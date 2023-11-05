@@ -22,11 +22,11 @@ export default class extends Component {
     
     axios.post('/login', data)
     .then((response)=> {
-
-      localStorage.setItem('token',response.data.token);
+    localStorage.setItem('token',response.data.token);
       this.setState({
         loggedIn:true
       })
+      this.props.setUser(response.data.user);
     })
     .catch((error)=> {
       console.log(error);
